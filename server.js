@@ -6,7 +6,7 @@ var db = require('./models');
 
 // set up server
 var app = express();
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8001;
 
 db.sequelize.sync().then(function() {
     app.listen(port, function() {
@@ -33,4 +33,4 @@ app.use(bodyParser.urlencoded({
 app.use(methodOverride('_method'));
 
 // get the routes
-require('./controllers/burger_controller.js')(app);
+require('./controllers/burgers_controller.js')(app);
